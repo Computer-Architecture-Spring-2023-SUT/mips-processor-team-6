@@ -8,3 +8,9 @@ $ git clone git@github.com:MohammadAli-Khodabandelou/CA-S23-starter.git
 $ mv CA-S23-starter project-<team_name>
 $ cd project-<team_name>
 ```
+Notice that if you have already pushed to your repository, all you need to do is clone it and add the handouts as a remote.
+```
+$ git clone git@github.com:MohammadAli-Khodabandelou/project-<team_name>.git
+$ cd project-<team_name>
+$ git remote add handout git@github.com:MohammadAli-Khodabandelou/CA-S23-starter.git
+```
