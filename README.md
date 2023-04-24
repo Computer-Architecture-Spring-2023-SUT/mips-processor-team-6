@@ -3,3 +3,8 @@ To begin the project, the initial step is to create a repository for your team. 
 
 ## Git
 Once you have established your team and private repository, the next step is to push the necessary materials into the empty repository. Only one member of the team should do this. To begin, clone the repository onto your computer using either ssh or https.
+```
+$ git clone git@github.com:MohammadAli-Khodabandelou/CA-S23-starter.git
+$ mv CA-S23-starter project-<team_name>
+$ cd project-<team_name>
+```
