@@ -8,6 +8,10 @@ $ git clone git@github.com:MohammadAli-Khodabandelou/CA-S23-starter.git
 $ mv CA-S23-starter project-<team_name>
 $ cd project-<team_name>
 ```
+Your repository is now set up and ready for you to begin developing your processor. Going forward, you can treat your repository as a single remote and continue with your usual workflow. To get any updates to the handouts, simply run:
+```
+$ git pull handout master
+```
 Notice that if you have already pushed to your repository, all you need to do is clone it and add the handouts as a remote.
 ```
 $ git clone git@github.com:MohammadAli-Khodabandelou/project-<team_name>.git
