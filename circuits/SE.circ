@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.8.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </tool>
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Probe">
+      <a name="appearance" val="classic"/>
+      <a name="radix" val="16"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="width" val="2"/>
+    </tool>
+    <tool name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="value" val="0xff"/>
+      <a name="width" val="8"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="SignExtend"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="SignExtend">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="SignExtend"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(150,340)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="S16"/>
+      <a name="radix" val="10signed"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(180,350)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="bit0" val="1"/>
+      <a name="bit10" val="1"/>
+      <a name="bit11" val="1"/>
+      <a name="bit12" val="1"/>
+      <a name="bit13" val="1"/>
+      <a name="bit14" val="1"/>
+      <a name="bit15" val="0"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="1"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="incoming" val="16"/>
+      <a name="spacing" val="2"/>
+    </comp>
+    <comp lib="0" loc="(260,30)" name="Splitter">
+      <a name="bit0" val="17"/>
+      <a name="bit1" val="17"/>
+      <a name="bit10" val="17"/>
+      <a name="bit11" val="17"/>
+      <a name="bit12" val="17"/>
+      <a name="bit13" val="17"/>
+      <a name="bit14" val="17"/>
+      <a name="bit15" val="16"/>
+      <a name="bit16" val="15"/>
+      <a name="bit17" val="14"/>
+      <a name="bit18" val="13"/>
+      <a name="bit19" val="12"/>
+      <a name="bit2" val="17"/>
+      <a name="bit20" val="11"/>
+      <a name="bit21" val="10"/>
+      <a name="bit22" val="9"/>
+      <a name="bit23" val="8"/>
+      <a name="bit24" val="7"/>
+      <a name="bit25" val="6"/>
+      <a name="bit26" val="5"/>
+      <a name="bit27" val="4"/>
+      <a name="bit28" val="3"/>
+      <a name="bit29" val="2"/>
+      <a name="bit3" val="17"/>
+      <a name="bit30" val="1"/>
+      <a name="bit31" val="0"/>
+      <a name="bit4" val="17"/>
+      <a name="bit5" val="17"/>
+      <a name="bit6" val="17"/>
+      <a name="bit7" val="17"/>
+      <a name="bit8" val="17"/>
+      <a name="bit9" val="17"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="18"/>
+      <a name="incoming" val="32"/>
+      <a name="spacing" val="2"/>
+    </comp>
+    <comp lib="0" loc="(310,30)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="S32"/>
+      <a name="output" val="true"/>
+      <a name="radix" val="16"/>
+      <a name="width" val="32"/>
+    </comp>
+    <wire from="(150,340)" to="(180,340)"/>
+    <wire from="(180,340)" to="(180,350)"/>
+    <wire from="(200,360)" to="(220,360)"/>
+    <wire from="(200,380)" to="(240,380)"/>
+    <wire from="(220,100)" to="(220,120)"/>
+    <wire from="(220,100)" to="(240,100)"/>
+    <wire from="(220,120)" to="(220,140)"/>
+    <wire from="(220,120)" to="(240,120)"/>
+    <wire from="(220,140)" to="(220,160)"/>
+    <wire from="(220,140)" to="(240,140)"/>
+    <wire from="(220,160)" to="(220,180)"/>
+    <wire from="(220,160)" to="(240,160)"/>
+    <wire from="(220,180)" to="(220,200)"/>
+    <wire from="(220,180)" to="(240,180)"/>
+    <wire from="(220,200)" to="(220,220)"/>
+    <wire from="(220,200)" to="(240,200)"/>
+    <wire from="(220,220)" to="(220,240)"/>
+    <wire from="(220,220)" to="(240,220)"/>
+    <wire from="(220,240)" to="(220,260)"/>
+    <wire from="(220,240)" to="(240,240)"/>
+    <wire from="(220,260)" to="(220,280)"/>
+    <wire from="(220,260)" to="(240,260)"/>
+    <wire from="(220,280)" to="(220,300)"/>
+    <wire from="(220,280)" to="(240,280)"/>
+    <wire from="(220,300)" to="(220,320)"/>
+    <wire from="(220,300)" to="(240,300)"/>
+    <wire from="(220,320)" to="(220,340)"/>
+    <wire from="(220,320)" to="(240,320)"/>
+    <wire from="(220,340)" to="(220,360)"/>
+    <wire from="(220,340)" to="(240,340)"/>
+    <wire from="(220,360)" to="(240,360)"/>
+    <wire from="(220,40)" to="(220,60)"/>
+    <wire from="(220,40)" to="(240,40)"/>
+    <wire from="(220,60)" to="(220,80)"/>
+    <wire from="(220,60)" to="(240,60)"/>
+    <wire from="(220,80)" to="(220,100)"/>
+    <wire from="(220,80)" to="(240,80)"/>
+    <wire from="(260,30)" to="(310,30)"/>
+  </circuit>
+</project>
