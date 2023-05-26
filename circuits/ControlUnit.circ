@@ -307,6 +307,7 @@
     </comp>
     <comp lib="1" loc="(550,90)" name="OR Gate">
       <a name="inputs" val="6"/>
+      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(600,560)" name="AND Gate">
       <a name="facing" val="south"/>
