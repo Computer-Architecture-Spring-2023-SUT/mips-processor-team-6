@@ -79,8 +79,12 @@
     <a name="circuit" val="ProgramCounter"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(160,140)" name="Constant"/>
-    <comp lib="0" loc="(160,200)" name="Clock">
+    <comp lib="0" loc="(150,150)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="En"/>
+    </comp>
+    <comp lib="0" loc="(160,200)" name="Pin">
+      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(170,120)" name="Pin">
@@ -102,6 +106,8 @@
       <a name="label" val="PC"/>
       <a name="width" val="32"/>
     </comp>
+    <wire from="(150,150)" to="(160,150)"/>
+    <wire from="(160,140)" to="(160,150)"/>
     <wire from="(160,140)" to="(190,140)"/>
     <wire from="(160,200)" to="(190,200)"/>
     <wire from="(170,120)" to="(190,120)"/>
