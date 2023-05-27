@@ -41,18 +41,18 @@
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6"/>
   <lib desc="#BFH-Praktika" name="7"/>
-  <lib desc="file#ProgramCounter.circ" name="8"/>
-  <lib desc="file#mux2x5.circ" name="9"/>
-  <lib desc="file#ALU.circ" name="10"/>
-  <lib desc="file#adder_32bit.circ" name="11"/>
-  <lib desc="file#JrControl.circ" name="12"/>
-  <lib desc="file#regfile.circ" name="13"/>
-  <lib desc="file#instruction_splitter.circ" name="14"/>
-  <lib desc="file#ShiftXL2.circ" name="15"/>
+  <lib desc="file#ShiftXL2.circ" name="8"/>
+  <lib desc="file#SE.circ" name="9"/>
+  <lib desc="file#ProgramCounter.circ" name="10"/>
+  <lib desc="file#mux2x5.circ" name="11"/>
+  <lib desc="file#ALU.circ" name="12"/>
+  <lib desc="file#adder_32bit.circ" name="13"/>
+  <lib desc="file#JrControl.circ" name="14"/>
+  <lib desc="file#regfile.circ" name="15"/>
   <lib desc="file#mem.circ" name="16"/>
-  <lib desc="file#ControlUnit.circ" name="17"/>
-  <lib desc="file#mux2x32.circ" name="18"/>
-  <lib desc="file#SE.circ" name="19"/>
+  <lib desc="file#instruction_splitter.circ" name="17"/>
+  <lib desc="file#ControlUnit.circ" name="18"/>
+  <lib desc="file#mux2x32.circ" name="19"/>
   <lib desc="file#SHL.circ" name="20"/>
   <main name="cpu"/>
   <options>
@@ -92,13 +92,17 @@
     <a name="circuit" val="cpu"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(1110,900)" name="Tunnel">
+    <comp lib="0" loc="(1050,890)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="RegDst"/>
     </comp>
     <comp lib="0" loc="(1140,790)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="RegWrite"/>
+    </comp>
+    <comp lib="0" loc="(1140,880)" name="Constant">
+      <a name="value" val="0x1f"/>
+      <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(1170,1000)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -255,20 +259,15 @@
     <comp lib="1" loc="(2070,410)" name="AND Gate">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="10" loc="(2010,810)" name="ALU">
+    <comp lib="10" loc="(390,810)" name="ProgramCounter">
+      <a name="label" val="PC"/>
+    </comp>
+    <comp lib="12" loc="(2010,810)" name="ALU">
       <a name="label" val="ALU_main"/>
     </comp>
-    <comp lib="12" loc="(1260,370)" name="JCU"/>
-    <comp lib="13" loc="(1470,810)" name="regfile">
+    <comp lib="14" loc="(1260,370)" name="JCU"/>
+    <comp lib="15" loc="(1470,810)" name="regfile">
       <a name="label" val="RegisterFile"/>
-    </comp>
-    <comp lib="14" loc="(920,770)" name="instruction_splitter">
-      <a name="label" val="instSplitter"/>
-    </comp>
-    <comp lib="15" loc="(740,470)" name="SXL2">
-      <a name="facing" val="north"/>
-      <a name="label" val="SXL_2"/>
-      <a name="labelloc" val="west"/>
     </comp>
     <comp lib="16" loc="(2400,810)" name="mem">
       <a name="label" val="DataMem"/>
@@ -276,14 +275,17 @@
     <comp lib="16" loc="(680,770)" name="mem">
       <a name="label" val="InstMem"/>
     </comp>
-    <comp lib="17" loc="(1290,470)" name="CU">
+    <comp lib="17" loc="(920,770)" name="instruction_splitter">
+      <a name="label" val="instSplitter"/>
+    </comp>
+    <comp lib="18" loc="(1290,470)" name="CU">
       <a name="label" val="ControlUnit"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="19" loc="(1400,740)" name="SignExtend">
-      <a name="label" val="SE"/>
+    <comp lib="2" loc="(1110,860)" name="Multiplexer">
+      <a name="width" val="5"/>
     </comp>
-    <comp lib="2" loc="(1170,860)" name="Multiplexer">
+    <comp lib="2" loc="(1180,870)" name="Multiplexer">
       <a name="width" val="5"/>
     </comp>
     <comp lib="2" loc="(1210,980)" name="Multiplexer">
@@ -310,8 +312,13 @@
     <comp lib="3" loc="(430,480)" name="Adder">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="8" loc="(390,810)" name="ProgramCounter">
-      <a name="label" val="PC"/>
+    <comp lib="8" loc="(740,470)" name="SXL2">
+      <a name="facing" val="north"/>
+      <a name="label" val="SXL_2"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="9" loc="(1400,740)" name="SignExtend">
+      <a name="label" val="SE"/>
     </comp>
     <wire from="(1010,410)" to="(1010,460)"/>
     <wire from="(1010,410)" to="(1040,410)"/>
@@ -323,18 +330,24 @@
     <wire from="(1040,450)" to="(1780,450)"/>
     <wire from="(1050,490)" to="(1050,550)"/>
     <wire from="(1050,490)" to="(1070,490)"/>
+    <wire from="(1050,890)" to="(1090,890)"/>
+    <wire from="(1090,880)" to="(1090,890)"/>
     <wire from="(1090,940)" to="(1090,960)"/>
     <wire from="(1090,960)" to="(1600,960)"/>
-    <wire from="(1110,900)" to="(1150,900)"/>
+    <wire from="(1110,860)" to="(1150,860)"/>
     <wire from="(1140,790)" to="(1140,800)"/>
     <wire from="(1140,800)" to="(1240,800)"/>
-    <wire from="(1150,880)" to="(1150,900)"/>
-    <wire from="(1170,1000)" to="(1190,1000)"/>
-    <wire from="(1170,860)" to="(1190,860)"/>
+    <wire from="(1140,880)" to="(1150,880)"/>
+    <wire from="(1160,890)" to="(1160,920)"/>
+    <wire from="(1160,920)" to="(1180,920)"/>
+    <wire from="(1170,1000)" to="(1180,1000)"/>
     <wire from="(1170,930)" to="(1170,950)"/>
     <wire from="(1170,950)" to="(1580,950)"/>
+    <wire from="(1180,1000)" to="(1190,1000)"/>
     <wire from="(1180,730)" to="(1180,740)"/>
-    <wire from="(1190,850)" to="(1190,860)"/>
+    <wire from="(1180,870)" to="(1190,870)"/>
+    <wire from="(1180,920)" to="(1180,1000)"/>
+    <wire from="(1190,850)" to="(1190,870)"/>
     <wire from="(1190,850)" to="(1250,850)"/>
     <wire from="(1200,1010)" to="(1200,1070)"/>
     <wire from="(1200,1070)" to="(2580,1070)"/>
@@ -488,7 +501,7 @@
     <wire from="(920,810)" to="(1010,810)"/>
     <wire from="(920,830)" to="(990,830)"/>
     <wire from="(920,850)" to="(970,850)"/>
-    <wire from="(920,870)" to="(1140,870)"/>
+    <wire from="(920,870)" to="(1080,870)"/>
     <wire from="(920,890)" to="(940,890)"/>
     <wire from="(920,910)" to="(960,910)"/>
     <wire from="(940,550)" to="(1050,550)"/>
@@ -507,6 +520,6 @@
     <wire from="(980,930)" to="(1170,930)"/>
     <wire from="(990,830)" to="(1250,830)"/>
     <wire from="(990,830)" to="(990,850)"/>
-    <wire from="(990,850)" to="(1140,850)"/>
+    <wire from="(990,850)" to="(1080,850)"/>
   </circuit>
 </project>
