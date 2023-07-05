@@ -137,6 +137,12 @@
       <a name="label" val="RegWrite"/>
       <a name="output" val="true"/>
     </comp>
+    <comp lib="0" loc="(2460,1150)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="JR"/>
+      <a name="output" val="true"/>
+    </comp>
     <comp lib="0" loc="(2460,520)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
@@ -667,7 +673,9 @@
     <wire from="(2400,380)" to="(2590,380)"/>
     <wire from="(2410,420)" to="(2410,470)"/>
     <wire from="(2410,420)" to="(2590,420)"/>
+    <wire from="(2430,1050)" to="(2430,1150)"/>
     <wire from="(2430,1050)" to="(2470,1050)"/>
+    <wire from="(2430,1150)" to="(2460,1150)"/>
     <wire from="(2430,940)" to="(2430,1050)"/>
     <wire from="(2430,940)" to="(2680,940)"/>
     <wire from="(2470,630)" to="(2480,630)"/>
