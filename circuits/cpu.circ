@@ -10,6 +10,7 @@
     </tool>
     <tool name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="facing" val="north"/>
     </tool>
     <tool name="Probe">
       <a name="appearance" val="classic"/>
@@ -40,23 +41,23 @@
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6"/>
   <lib desc="#BFH-Praktika" name="7"/>
-  <lib desc="file#cache.circ" name="8"/>
-  <lib desc="file#memDelayed.circ" name="9"/>
-  <lib desc="file#ALU.circ" name="10"/>
-  <lib desc="file#mux2x5.circ" name="11"/>
+  <lib desc="file#JrControl.circ" name="8"/>
+  <lib desc="file#mux2x5.circ" name="9"/>
+  <lib desc="file#SHL.circ" name="10"/>
+  <lib desc="file#adder_32bit.circ" name="11"/>
   <lib desc="file#regfile.circ" name="12"/>
-  <lib desc="file#JrControl.circ" name="13"/>
-  <lib desc="file#mem.circ" name="14"/>
-  <lib desc="file#ProgramCounter.circ" name="15"/>
-  <lib desc="file#ShiftXL2.circ" name="16"/>
-  <lib desc="file#SHL.circ" name="17"/>
-  <lib desc="file#cacheController.circ" name="18"/>
-  <lib desc="file#ControlUnit.circ" name="19"/>
-  <lib desc="file#SE.circ" name="20"/>
-  <lib desc="file#display.circ" name="21"/>
-  <lib desc="file#adder_32bit.circ" name="22"/>
-  <lib desc="file#instruction_splitter.circ" name="23"/>
-  <lib desc="file#mux2x32.circ" name="24"/>
+  <lib desc="file#mux2x32.circ" name="13"/>
+  <lib desc="file#ProgramCounter.circ" name="14"/>
+  <lib desc="file#ControlUnit.circ" name="15"/>
+  <lib desc="file#memDelayed.circ" name="16"/>
+  <lib desc="file#cache.circ" name="17"/>
+  <lib desc="file#SE.circ" name="18"/>
+  <lib desc="file#ALU.circ" name="19"/>
+  <lib desc="file#display.circ" name="20"/>
+  <lib desc="file#cacheController.circ" name="21"/>
+  <lib desc="file#instruction_splitter.circ" name="22"/>
+  <lib desc="file#mem.circ" name="23"/>
+  <lib desc="file#ShiftXL2.circ" name="24"/>
   <main name="cpu"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -1222,10 +1223,6 @@
       <a name="appear" val="right"/>
       <a name="facing" val="west"/>
     </comp>
-    <comp lib="0" loc="(4420,750)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="clk_main"/>
-    </comp>
     <comp lib="0" loc="(4420,860)" name="Tunnel">
       <a name="label" val="writeMask_cache"/>
       <a name="width" val="4"/>
@@ -1237,13 +1234,14 @@
       <a name="facing" val="east"/>
       <a name="label" val="clk_main"/>
     </comp>
+    <comp lib="0" loc="(4450,750)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="clk_main"/>
+    </comp>
     <comp lib="0" loc="(4460,1190)" name="Tunnel">
       <a name="label" val="stall_done"/>
     </comp>
     <comp lib="0" loc="(4470,1280)" name="Constant"/>
-    <comp lib="0" loc="(4480,820)" name="Tunnel">
-      <a name="label" val="Hit"/>
-    </comp>
     <comp lib="0" loc="(4490,1430)" name="Splitter">
       <a name="appear" val="center"/>
       <a name="bit0" val="1"/>
@@ -1251,9 +1249,6 @@
       <a name="facing" val="west"/>
       <a name="incoming" val="3"/>
       <a name="spacing" val="3"/>
-    </comp>
-    <comp lib="0" loc="(4490,740)" name="Tunnel">
-      <a name="label" val="clk"/>
     </comp>
     <comp lib="0" loc="(450,620)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -1266,10 +1261,16 @@
     <comp lib="0" loc="(4520,1150)" name="Tunnel">
       <a name="label" val="stall"/>
     </comp>
+    <comp lib="0" loc="(4520,820)" name="Tunnel">
+      <a name="label" val="Hit"/>
+    </comp>
     <comp lib="0" loc="(4530,560)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="ALUResult_out"/>
       <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(4530,740)" name="Tunnel">
+      <a name="label" val="clk"/>
     </comp>
     <comp lib="0" loc="(4550,1520)" name="Tunnel">
       <a name="label" val="reset"/>
@@ -1587,17 +1588,15 @@
     <comp lib="1" loc="(4480,1680)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(4500,790)" name="NOT Gate"/>
     <comp lib="1" loc="(4550,1700)" name="AND Gate"/>
-    <comp lib="10" loc="(3220,730)" name="ALU"/>
     <comp lib="12" loc="(1950,950)" name="regfile"/>
-    <comp lib="13" loc="(1950,430)" name="JCU"/>
-    <comp lib="15" loc="(440,880)" name="ProgramCounter"/>
-    <comp lib="16" loc="(790,760)" name="SXL2">
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="18" loc="(4320,670)" name="cahceCU"/>
-    <comp lib="19" loc="(1950,530)" name="CU"/>
+    <comp lib="14" loc="(440,880)" name="ProgramCounter"/>
+    <comp lib="15" loc="(1950,530)" name="CU"/>
+    <comp lib="16" loc="(4320,560)" name="memDelayed"/>
+    <comp lib="16" loc="(730,840)" name="memDelayed"/>
+    <comp lib="17" loc="(4320,800)" name="cache"/>
+    <comp lib="18" loc="(1950,900)" name="SignExtend"/>
+    <comp lib="19" loc="(3220,730)" name="ALU"/>
     <comp lib="2" loc="(1820,1230)" name="Multiplexer">
       <a name="width" val="5"/>
     </comp>
@@ -1635,7 +1634,7 @@
       <a name="select" val="2"/>
       <a name="width" val="2"/>
     </comp>
-    <comp lib="2" loc="(4470,740)" name="Multiplexer"/>
+    <comp lib="2" loc="(4500,740)" name="Multiplexer"/>
     <comp lib="2" loc="(4520,1090)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
@@ -1645,11 +1644,14 @@
     <comp lib="2" loc="(560,630)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="20" loc="(1950,900)" name="SignExtend"/>
-    <comp lib="21" loc="(370,1070)" name="main"/>
-    <comp lib="21" loc="(370,1340)" name="main"/>
-    <comp lib="21" loc="(370,1610)" name="main"/>
-    <comp lib="23" loc="(970,840)" name="instruction_splitter"/>
+    <comp lib="20" loc="(370,1070)" name="main"/>
+    <comp lib="20" loc="(370,1340)" name="main"/>
+    <comp lib="20" loc="(370,1610)" name="main"/>
+    <comp lib="21" loc="(4320,670)" name="cahceCU"/>
+    <comp lib="22" loc="(970,840)" name="instruction_splitter"/>
+    <comp lib="24" loc="(790,760)" name="SXL2">
+      <a name="labelloc" val="west"/>
+    </comp>
     <comp lib="3" loc="(2910,620)" name="Shifter">
       <a name="width" val="32"/>
     </comp>
@@ -1890,15 +1892,15 @@
     <comp lib="6" loc="(3645,1145)" name="Text">
       <a name="text" val="PredictionLogic"/>
     </comp>
-    <comp lib="6" loc="(3819,2033)" name="Text">
+    <comp lib="6" loc="(3815,2030)" name="Text">
       <a name="color" val="#0d820a"/>
       <a name="font" val="Arial bolditalic 62"/>
       <a name="text" val="BRANCH PREDICTOR"/>
     </comp>
-    <comp lib="6" loc="(4145,1472)" name="Text">
+    <comp lib="6" loc="(4145,1470)" name="Text">
       <a name="text" val="needs one stall"/>
     </comp>
-    <comp lib="6" loc="(4148,1541)" name="Text">
+    <comp lib="6" loc="(4145,1540)" name="Text">
       <a name="text" val="needs two stalls"/>
     </comp>
     <comp lib="6" loc="(4965,620)" name="Text">
@@ -1916,9 +1918,7 @@
       <a name="font" val="Arial bolditalic 64"/>
       <a name="text" val="RT"/>
     </comp>
-    <comp lib="8" loc="(4320,800)" name="cache"/>
-    <comp lib="9" loc="(4320,560)" name="memDelayed"/>
-    <comp lib="9" loc="(730,840)" name="memDelayed"/>
+    <comp lib="8" loc="(1950,430)" name="JCU"/>
     <wire from="(1000,230)" to="(1060,230)"/>
     <wire from="(1010,270)" to="(1030,270)"/>
     <wire from="(1010,370)" to="(1020,370)"/>
@@ -2394,7 +2394,7 @@
     <wire from="(4320,1650)" to="(4330,1650)"/>
     <wire from="(4320,670)" to="(4330,670)"/>
     <wire from="(4320,800)" to="(4330,800)"/>
-    <wire from="(4320,820)" to="(4450,820)"/>
+    <wire from="(4320,820)" to="(4480,820)"/>
     <wire from="(4320,840)" to="(4330,840)"/>
     <wire from="(4320,860)" to="(4420,860)"/>
     <wire from="(4330,1650)" to="(4330,1660)"/>
@@ -2420,39 +2420,33 @@
     <wire from="(4420,1310)" to="(4460,1310)"/>
     <wire from="(4420,1500)" to="(4430,1500)"/>
     <wire from="(4420,1670)" to="(4450,1670)"/>
-    <wire from="(4420,750)" to="(4440,750)"/>
     <wire from="(4430,1450)" to="(4430,1500)"/>
     <wire from="(4430,1690)" to="(4430,1710)"/>
     <wire from="(4430,1690)" to="(4450,1690)"/>
-    <wire from="(4430,730)" to="(4440,730)"/>
+    <wire from="(4430,730)" to="(4470,730)"/>
     <wire from="(4440,1380)" to="(4440,1400)"/>
     <wire from="(4440,1400)" to="(4470,1400)"/>
     <wire from="(4450,1430)" to="(4470,1430)"/>
     <wire from="(4450,1600)" to="(4490,1600)"/>
     <wire from="(4450,1720)" to="(4450,1760)"/>
     <wire from="(4450,1720)" to="(4500,1720)"/>
-    <wire from="(4450,750)" to="(4450,760)"/>
-    <wire from="(4450,760)" to="(4450,780)"/>
-    <wire from="(4450,780)" to="(4510,780)"/>
-    <wire from="(4450,790)" to="(4450,820)"/>
-    <wire from="(4450,790)" to="(4470,790)"/>
-    <wire from="(4450,820)" to="(4480,820)"/>
+    <wire from="(4450,750)" to="(4470,750)"/>
     <wire from="(4460,1300)" to="(4460,1310)"/>
     <wire from="(4460,1300)" to="(4470,1300)"/>
     <wire from="(4460,1450)" to="(4460,1560)"/>
     <wire from="(4460,1450)" to="(4490,1450)"/>
     <wire from="(4470,1100)" to="(4470,1110)"/>
     <wire from="(4470,1100)" to="(4490,1100)"/>
-    <wire from="(4470,740)" to="(4490,740)"/>
     <wire from="(4480,1680)" to="(4500,1680)"/>
+    <wire from="(4480,760)" to="(4480,820)"/>
+    <wire from="(4480,820)" to="(4520,820)"/>
     <wire from="(4490,1470)" to="(4490,1600)"/>
     <wire from="(450,620)" to="(530,620)"/>
     <wire from="(4500,1110)" to="(4500,1150)"/>
     <wire from="(4500,1150)" to="(4520,1150)"/>
     <wire from="(4500,1320)" to="(4500,1350)"/>
     <wire from="(4500,1350)" to="(4510,1350)"/>
-    <wire from="(4500,790)" to="(4510,790)"/>
-    <wire from="(4510,780)" to="(4510,790)"/>
+    <wire from="(4500,740)" to="(4530,740)"/>
     <wire from="(4520,1090)" to="(4570,1090)"/>
     <wire from="(4520,1490)" to="(4520,1520)"/>
     <wire from="(4520,1520)" to="(4550,1520)"/>
