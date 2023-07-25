@@ -10,7 +10,7 @@
   - [Phase 4: Designing Branch Prediction](#phase-4-designing-branch-prediction)
 
 ## Introduction
-Welcome to the MIPS Processor Project! This repository showcases the collaborative efforts of our team - Arash Ziyaei, Amir Mohammad, and Farbod haji Mohmmad Ali - during our Computer Architecture course. The project centers around designing and implementing a MIPS  processor with several enhancements. Through four distinct phases, we explore the fundamentals of processor design, including cache memory, pipelining, and branch prediction. We hope our project serves as an educational resource for those interested in computer architecture.
+Welcome to the MIPS Processor Project! This repository showcases the collaborative efforts of our team - Arash Ziyaei, Amir Mohammad and Farbod haji Mohmmad Ali - during our Computer Architecture course. The project centers around designing and implementing a MIPS  processor with several enhancements. Through four distinct phases, we explore the fundamentals of processor design, including cache memory, pipelining and branch prediction. We hope our project serves as an educational resource for those interested in computer architecture.
 
 ## Team Members
 
@@ -24,7 +24,7 @@ Welcome to the MIPS Processor Project! This repository showcases the collaborati
 ## Project Phases
 
 ### Phase 1: Designing MIPS Data Path
-In this phase, we designed a single-cycle MIPS processor data path. The processor contained the essential components, including instruction fetch, instruction decode, ALU (Arithmetic Logic Unit), and memory access. This initial phase served as the foundation for the subsequent enhancements.
+In this phase, we designed a single-cycle MIPS processor data path. The processor contained the essential components, including instruction fetch, instruction decode, ALU (Arithmetic Logic Unit) and memory access. This initial phase served as the foundation for the subsequent enhancements.
 
 ### Phase 2: Adding Cache Memory
 Building upon the Phase 1 design, we extended the MIPS processor by adding a 2-way set associative cache with 4 sets and 2 blocks in each set. Each cache block helds 4 words. The addition of cache memory aimed to reduce memory access latency and improve overall performance.
