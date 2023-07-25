@@ -18,7 +18,7 @@ Welcome to the MIPS Processor Project! This repository showcases the collaborati
 |---------------|------------|
 | Arash Ziyaei Razban    | 400105109 |
 | Amir Mohammad Drakhshandeh    | 400101153 |
-| Farbod Haji Mohmmad Ali | 401011038 |
+| Farbod Haji Mohammad Ali | 401011038 |
 
 
 ## Project Phases
